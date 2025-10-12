@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 9 - Personal Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="PS_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="PS_index.html" class="hover:text-indigo-600">Personal Skills</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week 9</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-indigo-100 rounded-full mb-6">
+        <i class="fa-solid fa-9 text-3xl text-indigo-600"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        Week <span class="gradient-text">9</span>
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+        Specialized skills and project development for Week 9
+      </p>
+    </header>
+
+    <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Overview</h2>
+      <p class="text-slate-700 mb-6 leading-relaxed">
+        Week 9 concentrated on deployment and maintenance strategies for sustainable skill application. 
+        This week emphasized the importance of long-term support and continuous improvement.
+      </p>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Key Learning Objectives</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Implementing effective deployment strategies</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Developing maintenance and support capabilities</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Building monitoring and diagnostic skills</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Enhancing update and upgrade management abilities</span>
+        </li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Activities Completed</h2>
+      <div class="space-y-4">
+        <div class="border-l-4 border-indigo-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Deployment Workshop</h3>
+          <p class="text-slate-600">Learned strategies for successful implementation and rollout of solutions.</p>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Maintenance Planning Exercise</h3>
+          <p class="text-slate-600">Practiced developing long-term support and maintenance strategies.</p>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Monitoring Challenge</h3>
+          <p class="text-slate-600">Enhanced abilities to track performance and identify issues proactively.</p>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Upgrade Simulation</h3>
+          <p class="text-slate-600">Developed skills to manage system updates and improvements effectively.</p>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Deployment Strategies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div class="border border-indigo-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 text-lg mb-3">Phased Rollout</h3>
+          <p class="text-slate-700 mb-3">Implemented gradual deployment to minimize risks and ensure stability.</p>
+          <div class="flex items-center text-sm text-indigo-600">
+            <i class="fa-solid fa-rocket mr-2"></i>
+            <span>Reduced deployment failures by 65%</span>
+          </div>
+        </div>
+        <div class="border border-indigo-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 text-lg mb-3">Continuous Monitoring</h3>
+          <p class="text-slate-700 mb-3">Established systems to track performance and detect issues in real-time.</p>
+          <div class="flex items-center text-sm text-indigo-600">
+            <i class="fa-solid fa-chart-bar mr-2"></i>
+            <span>Improved issue detection speed by 80%</span>
+          </div>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Reflections</h2>
+      <p class="text-slate-700 mb-6 leading-relaxed">
+        This week emphasized that launching something is just the beginning of the journey. The 
+        deployment exercises showed how careful planning prevents many post-launch issues. 
+        Maintenance planning highlighted the importance of thinking long-term rather than just 
+        focusing on immediate results. Monitoring systems revealed how much can be learned from 
+        observing actual usage patterns.
+      </p>
+      
+      <div class="bg-indigo-50 rounded-xl p-6 mt-8">
+        <h3 class="font-bold text-indigo-800 text-lg mb-3">Key Takeaway</h3>
+        <p class="text-indigo-700">
+          <i class="fa-solid fa-quote-left mr-2"></i>
+          Success is not just about creating something great, but about sustaining it over time. 
+          Proper deployment, ongoing maintenance, and continuous monitoring ensure that initial 
+          efforts continue to deliver value long after launch.
+          <i class="fa-solid fa-quote-right ml-2"></i>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5 text-2xl">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 2 - Professional Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+
+    .section-divider {
+      border-top: 2px solid #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .johari-quadrant {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .johari-quadrant:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    .skill-category-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .skill-category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .key-point {
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .note {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="PS_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <nav class="mb-4">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="PS_index.html" class="hover:text-indigo-600">Professional Skills</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week 2 - Crafting an Effective CV</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-14 h-14 bg-indigo-100 rounded-full mb-3">
+        <i class="fa-solid fa-2 text-xl text-indigo-600"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Week <span class="gradient-text">2</span>: Crafting an Effective CV
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+        Understanding how to create a compelling CV that stands out and aligns with job requirements
+      </p>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl shadow-lg p-6 mb-8 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-4">
+            <i class="fa-solid fa-2 text-2xl text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-1">Week 2: Crafting an Effective CV</h2>
+            <p class="text-indigo-100 text-sm">Understanding how to create a compelling CV that stands out and aligns with job requirements</p>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2">
+          <span class="text-white font-semibold">CV Development</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-4 max-w-6xl mx-auto">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">1. Lesson Overview</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        A Curriculum Vitae (CV) is more than just a job application document — it is your professional marketing tool that introduces you to employers.
+        A well-designed CV showcases your skills, qualifications, and achievements while reflecting your professionalism and attention to detail.
+      </p>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        The lesson focuses on how to create a compelling CV that stands out, aligns with job requirements, and leaves a lasting impression on hiring managers.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">2. Lesson Objectives</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        By the end of this lesson, you should be able to:
+      </p>
+      
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Understand the purpose and importance of a CV in the recruitment process.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Recognize the key components that make a CV complete and professional.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Learn to structure and format a CV for readability and clarity.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Apply techniques to tailor your CV for specific job applications.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Avoid common mistakes that weaken the quality of a CV.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">3. What is a CV?</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        A Curriculum Vitae (CV) is a detailed document summarizing your:
+      </p>
+      
+      <ul class="space-y-2 mb-3">
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle text-indigo-500 mt-2 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Educational background</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle text-indigo-500 mt-2 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Work experiences</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle text-indigo-500 mt-2 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Skills and achievements</span>
+        </li>
+      </ul>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        It helps employers understand your suitability for a particular role.
+        A good CV highlights who you are, what you can do, and why you are the right person for the job.
+      </p>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Your CV is often the first impression you make — it determines whether you get shortlisted for an interview.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">4. The Role of a CV in Job Applications</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Introduces you professionally to employers.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Highlights your strengths in a structured and visual way.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Increases your visibility in Applicant Tracking Systems (ATS).</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Serves as a summary of your personal brand — reflecting not just your skills, but your values and professionalism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">5. Making a Positive First Impression</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        A CV must be clear, neat, and error-free. The design and layout should be simple yet appealing.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Tips for a Strong First Impression</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Use consistent fonts</strong> (e.g., Arial, Calibri) and sizes (10–12 pt).</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Maintain balanced spacing</strong> — avoid cluttered layouts.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Keep information concise and relevant.</strong></p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Avoid spelling or grammar errors.</strong></p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Use action verbs</strong> (e.g., led, managed, developed, designed).</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Recruiters usually spend only 6–10 seconds reviewing a CV — your layout and structure must help them find key points quickly.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">6. Tailoring Your CV</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Every job is different — and your CV should reflect that.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2"> Why Tailoring Matters</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Shows genuine interest in the position.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Demonstrates that you've researched the company and understand its goals.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Emphasizes the most relevant skills and achievements for that specific job.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2 mt-4"> Example:</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>For a Marketing Role</strong> – Emphasize communication, creativity, and project results.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>For a Technical Role</strong> – Highlight coding, problem-solving, and analytical ability.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>A tailored CV speaks directly to the employer's needs.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">7. Importance of Research</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Research helps you build a targeted CV that aligns with the job's expectations.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">What to Research:</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-search text-blue-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">The company's mission, values, and goals.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-search text-blue-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">The job's skills and responsibilities.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-search text-blue-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Common keywords used in the job posting (important for ATS).</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed mt-3">
+        Including these keywords increases the chances of your CV being shortlisted by both automated systems and human reviewers.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">8. CV Structure and Formatting</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        A good CV is clear, organized, and visually consistent.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Structure Guidelines:</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-cube text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Use clear headings</strong> (e.g., Work Experience, Skills).</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-cube text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Apply bullet points</strong> for readability.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-cube text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Maintain consistent formatting</strong> throughout.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-cube text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Avoid unnecessary colors or decorations.</strong></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>The CV should look professional and easy to scan at a glance.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">9. Essential Components of a CV</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Section</th>
+              <th class="px-2 py-1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">1. Personal Information</td>
+              <td class="px-2 py-1">Full name, contact number, email, city, LinkedIn or portfolio link.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">2. Professional Summary</td>
+              <td class="px-2 py-1">2–4 lines introducing your career goals, key strengths, and value you bring.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">3. Work Experience</td>
+              <td class="px-2 py-1">List previous roles (most recent first). Include achievements using metrics. Example: "Increased website traffic by 25% through SEO optimization."</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">4. Education</td>
+              <td class="px-2 py-1">Degrees, institutions, graduation years, and any honors or coursework relevant to the role.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">5. Skills</td>
+              <td class="px-2 py-1">A mix of hard skills (technical) and soft skills (communication, teamwork, leadership).</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">6. Achievements & Awards</td>
+              <td class="px-2 py-1">Certifications, recognitions, and notable accomplishments.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">10. Avoiding Common CV Mistakes</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">❌ Mistake</th>
+              <th class="px-2 py-1">✅ Correction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Spelling or grammar errors</td>
+              <td class="px-2 py-1">Proofread multiple times or use Grammarly.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Overly long CV</td>
+              <td class="px-2 py-1">Keep it within 1–2 pages.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Irrelevant details</td>
+              <td class="px-2 py-1">Include only job-relevant information.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Inconsistent fonts/layout</td>
+              <td class="px-2 py-1">Maintain uniform style throughout.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Generic CV</td>
+              <td class="px-2 py-1">Always tailor it to the specific job.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Your CV should communicate clarity, confidence, and credibility.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">11. Practical Application Exercise</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-laptop-code text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Create or update your own CV using professional formatting.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-users text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Perform a peer review with classmates for feedback.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-pen-to-square text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Implement constructive changes to make your CV stand out.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">12. Key Takeaways</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">A CV is your gateway to professional opportunities.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">It must be tailored, organized, and honest.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Good formatting and clarity make it easy for employers to notice your strengths.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">With research, feedback, and practice, your CV becomes a powerful marketing document that reflects your readiness for the professional world.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">13. My Learning Reflection</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Through this lesson, I learned how important it is to present myself professionally on paper.
+        I realized that a CV is not just a list of experiences — it's a strategic document that communicates my identity, achievements, and career goals.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I now understand the importance of:
+      </p>
+      
+      <div class="space-y-2 mb-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Tailoring my CV to match each job's requirements.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Using keywords to pass ATS filters.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Maintaining clarity, structure, and professionalism in presentation.</span>
+        </div>
+      </div>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I also learned that continuous updating and feedback help refine my CV as my career progresses.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        This lesson taught me that every section of a CV tells part of my story — and I must ensure it's told in the most professional and impactful way.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">14. My Personal Statement</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I am committed to developing a CV that accurately reflects my skills, dedication, and growth.
+        My goal is to build a career profile that demonstrates both competence and character — highlighting my technical expertise alongside my professionalism and adaptability.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I believe in lifelong improvement — with every experience, I aim to enhance my resume, refine my communication, and express my potential more confidently.
+        With the right balance of clarity, relevance, and design, my CV will continue to open doors to new opportunities and represent me as a responsible, motivated, and capable professional.
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-4 mt-8">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-8 h-8 object-cover border-2 border-indigo-600 shadow-md" />
+        <div>
+          <h2 class="text-white font-extrabold text-sm">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-xs">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-lg">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Personal Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+      --accent: #10b981;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    .skill-card {
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff, #f1f5f9);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.15);
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+
+    .stats-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 4px solid white;
+      box-shadow: 0 0 0 5px var(--primary);
+    }
+
+    .timeline-item:hover::before {
+      background: var(--secondary);
+      box-shadow: 0 0 0 5px var(--secondary);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Personal Skills</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl mb-6 shadow-lg">
+        <i class="fa-solid fa-star text-4xl text-white"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        Professional <span class="gradient-text">Skills</span> Development
+      </h1>
+      <p class="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+        A comprehensive 12-week journey through essential professional skills for workplace success, from foundational employability skills to advanced professional etiquette.
+      </p>
+    </header>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-indigo-600 mb-2">12</div>
+        <div class="text-slate-700 font-medium">Learning Objectives</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-amber-600 mb-2">10+</div>
+        <div class="text-slate-700 font-medium">Core Competencies</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-emerald-600 mb-2">5</div>
+        <div class="text-slate-700 font-medium">Assessment Types</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-rose-600 mb-2">100%</div>
+        <div class="text-slate-700 font-medium">Practical Skills</div>
+      </div>
+    </div>
+
+    <!-- Skills Progress -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Professional Skills Development Progress</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">Communication Skills</span>
+            <span class="text-slate-500">92%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">Leadership Abilities</span>
+            <span class="text-slate-500">88%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 88%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">Professional Etiquette</span>
+            <span class="text-slate-500">85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">Career Development</span>
+            <span class="text-slate-500">80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weeks Timeline -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center">Development Timeline</h2>
+      <div class="max-w-3xl mx-auto relative timeline pl-20">
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-indigo-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Foundational Professional Skills</h3>
+              <span class="badge">Weeks 1-3</span>
+            </div>
+            <p class="text-slate-700 mb-4">
+              Establishing fundamental professional competencies including employability skills, CV writing, and interview techniques.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Employability Skills</span>
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">CV Writing</span>
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Interview Skills</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Communication & Leadership</h3>
+              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">Weeks 4-6</span>
+            </div>
+            <p class="text-slate-700 mb-4">
+              Developing negotiation abilities, portfolio creation, and team leadership skills.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Negotiation</span>
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Portfolio Writing</span>
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Team Leadership</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-emerald-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Workplace Effectiveness</h3>
+              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">Weeks 7-9</span>
+            </div>
+            <p class="text-slate-700 mb-4">
+              Mastering meeting facilitation, emotional intelligence, and personal development planning.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Meeting Skills</span>
+              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Emotional Intelligence</span>
+              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Personal Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-rose-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Professional Excellence</h3>
+              <span class="badge bg-gradient-to-r from-rose-500 to-rose-600">Weeks 10-12</span>
+            </div>
+            <p class="text-slate-700 mb-4">
+              Refining professional etiquette, research capabilities, and dining/grooming standards.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Professional Etiquette</span>
+              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Research Skills</span>
+              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Dining Etiquette</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weeks Grid -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center">Weekly Modules</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Week 1 -->
+        <a href="week1.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
+              <i class="fa-solid fa-1 text-2xl text-indigo-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 1</h3>
+          <p class="text-slate-600 text-sm">Introduction to Professional Skills</p>
+        </a>
+
+        <!-- Week 2 -->
+        <a href="week2.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
+              <i class="fa-solid fa-2 text-2xl text-indigo-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 2</h3>
+          <p class="text-slate-600 text-sm">CV Writing and Cover Letters</p>
+        </a>
+
+        <!-- Week 3 -->
+        <a href="week3.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
+              <i class="fa-solid fa-3 text-2xl text-indigo-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 3</h3>
+          <p class="text-slate-600 text-sm">Interview Skills</p>
+        </a>
+
+        <!-- Week 4 -->
+        <a href="week4.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
+              <i class="fa-solid fa-4 text-2xl text-amber-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 4</h3>
+          <p class="text-slate-600 text-sm">Negotiation Skills</p>
+        </a>
+
+        <!-- Week 5 -->
+        <a href="week5.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
+              <i class="fa-solid fa-5 text-2xl text-amber-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 5</h3>
+          <p class="text-slate-600 text-sm">Introduction to Portfolio Writing</p>
+        </a>
+
+        <!-- Week 6 -->
+        <a href="week6.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
+              <i class="fa-solid fa-6 text-2xl text-amber-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 6</h3>
+          <p class="text-slate-600 text-sm">Team Leadership Skills</p>
+        </a>
+
+        <!-- Week 7 -->
+        <a href="week7.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
+              <i class="fa-solid fa-7 text-2xl text-emerald-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 7</h3>
+          <p class="text-slate-600 text-sm">Facilitating and Conducting Meetings</p>
+        </a>
+
+        <!-- Week 8 -->
+        <a href="week8.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
+              <i class="fa-solid fa-8 text-2xl text-emerald-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 8</h3>
+          <p class="text-slate-600 text-sm">Emotional Intelligence</p>
+        </a>
+
+        <!-- Week 9 -->
+        <a href="week9.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
+              <i class="fa-solid fa-9 text-2xl text-emerald-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 9</h3>
+          <p class="text-slate-600 text-sm">Personal Development Planning</p>
+        </a>
+
+        <!-- Week 10 -->
+        <a href="week10.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
+              <i class="fa-solid fa-0 text-2xl text-rose-600"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 10</h3>
+          <p class="text-slate-600 text-sm">Professional Etiquette</p>
+        </a>
+
+        <!-- Week 11 -->
+        <a href="week11.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
+              <div class="flex">
+                <i class="fa-solid fa-1 text-2xl text-rose-600"></i>
+                <i class="fa-solid fa-1 text-2xl text-rose-600 -ml-1"></i>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 11</h3>
+          <p class="text-slate-600 text-sm">Research Skills</p>
+        </a>
+
+        <!-- Week 12 -->
+        <a href="week12.html" class="skill-card p-6 text-center group">
+          <div class="mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
+              <div class="flex">
+                <i class="fa-solid fa-1 text-2xl text-rose-600"></i>
+                <i class="fa-solid fa-2 text-2xl text-rose-600 -ml-1"></i>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 12</h3>
+          <p class="text-slate-600 text-sm">Dining and Grooming Etiquette</p>
+        </a>
+
+        <!-- Food Fiesta -->
+        <a href="food_fiesta.html" class="skill-card p-6 text-center group col-span-1 sm:col-span-2 lg:col-span-4 xl:col-span-4">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="mb-4 md:mb-0 md:mr-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
+                <i class="fa-solid fa-utensils text-2xl text-amber-600"></i>
+              </div>
+            </div>
+            <div class="text-center md:text-left">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Food Fiesta</h3>
+              <p class="text-slate-600">Culinary exploration and creative project showcasing cultural appreciation through cuisine</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Professional Skills Module Outline -->
+        <a href="skills_module.html" class="skill-card p-6 text-center group col-span-1 sm:col-span-2 lg:col-span-4 xl:col-span-4">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="mb-4 md:mb-0 md:mr-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
+                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-600"></i>
+              </div>
+            </div>
+            <div class="text-center md:text-left">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Skills Module Outline</h3>
+              <p class="text-slate-600">Comprehensive overview of the 12-week professional skills development program with detailed learning objectives</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5 text-2xl">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

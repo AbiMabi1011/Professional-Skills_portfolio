@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 3 - Professional Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+
+    .section-divider {
+      border-top: 2px solid #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .johari-quadrant {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .johari-quadrant:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    .skill-category-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .skill-category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .key-point {
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .note {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="PS_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <nav class="mb-4">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="PS_index.html" class="hover:text-indigo-600">Professional Skills</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week 3 - Job Interviews & Mock Interview Experience</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-14 h-14 bg-indigo-100 rounded-full mb-3">
+        <i class="fa-solid fa-3 text-xl text-indigo-600"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Week <span class="gradient-text">3</span>: Job Interviews & Mock Interview Experience
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+        Understanding job interview preparation and performance with hands-on mock interview experience
+      </p>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl shadow-lg p-6 mb-8 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-4">
+            <i class="fa-solid fa-3 text-2xl text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-1">Week 3: Job Interviews & Mock Interview Experience</h2>
+            <p class="text-indigo-100 text-sm">Understanding job interview preparation and performance with hands-on mock interview experience</p>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2">
+          <span class="text-white font-semibold">Interview Skills</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-4 max-w-6xl mx-auto">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">1. Lesson Overview</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        This lesson focused on job interview preparation and performance, emphasizing the importance of verbal and non-verbal communication, active listening, and confident presentation.
+        It also included a mock interview activity where students acted as interviewers and interviewees, gaining firsthand experience of real-world hiring scenarios.
+      </p>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        The objective was to develop practical interview skills, understand employer expectations, and build self-confidence for future job applications.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">2. Lesson Objectives</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        By the end of this lesson, you should be able to:
+      </p>
+      
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Understand the purpose of a job interview in the hiring process.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Apply effective verbal and non-verbal communication techniques.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Prepare answers that demonstrate skills, achievements, and personality.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Practice mock interview sessions to identify personal strengths and weaknesses.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Reflect on your own performance and plan ways to improve.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">3. What Is a Job Interview?</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        A job interview is a formal conversation between a job applicant and a company representative.
+        Its goal is to exchange information — the interviewer evaluates whether the candidate fits the job, while the candidate learns whether the company suits their career goals.
+      </p>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>In short: It's not just an evaluation; it's a two-way communication process.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">4. The Role of Effective Communication</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Interview success depends heavily on communication skills.
+        How you speak, listen, and behave gives employers evidence of your confidence, personality, and professionalism.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Types of Communication</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Verbal Communication:</strong> Clarity, tone, confidence, vocabulary.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Non-Verbal Communication:</strong> Body language, facial expressions, posture, eye contact.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Listening:</strong> Paying attention, understanding, and responding appropriately.</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed mt-3">
+        According to research cited in the lesson, 93% of communication impact in interviews comes from non-verbal cues (tone 38%, body language 55%).
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">5. The 6 C's of Effective Communication</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Principle</th>
+              <th class="px-2 py-1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Clear</td>
+              <td class="px-2 py-1">Present information simply and directly.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Concise</td>
+              <td class="px-2 py-1">Avoid unnecessary words; stay to the point.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Correct</td>
+              <td class="px-2 py-1">Provide accurate, truthful details.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Complete</td>
+              <td class="px-2 py-1">Include all relevant information.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Concrete</td>
+              <td class="px-2 py-1">Use examples to support your answers.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Courteous & Confident</td>
+              <td class="px-2 py-1">Be polite, respectful, and show self-assurance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">6. Before the Interview – Preparation Steps</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Research the Company</strong> – Know their values, services, and mission.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Understand the Role</strong> – Study the job description carefully.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Prepare Your CV and Documents</strong> – Review them thoroughly.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Plan Answers for Common Questions</strong> – ("Tell me about yourself," "Why should we hire you?").</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Prepare Questions to Ask the Employer</strong> – Shows interest and initiative.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Dress Professionally</strong> – Follow the company's formal or semi-formal dress code.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">7. During the Interview – Key Behavioral Tips</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Do's</th>
+              <th class="px-2 py-1">Don'ts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Maintain eye contact and smile.</td>
+              <td class="px-2 py-1">Avoid looking down or crossing arms.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Sit straight and show confidence.</td>
+              <td class="px-2 py-1">Don't slouch or fidget.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Listen carefully and respond clearly.</td>
+              <td class="px-2 py-1">Don't interrupt the interviewer.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Give specific examples to support answers.</td>
+              <td class="px-2 py-1">Don't speak in general terms.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Ask relevant questions about the job.</td>
+              <td class="px-2 py-1">Don't say you have no questions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">8. Structure of a Good Interview Answer</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Every answer should include:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Situation / Challenge</strong> – Describe the context.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Task / Goal</strong> – What was expected of you.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Action</strong> – What you did to solve it.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-chevron-right text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Result</strong> – What was achieved or learned.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>This is often called the STAR Method (Situation, Task, Action, Result).</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">9. Active Listening and Response</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Active listening helps build rapport and ensures accurate responses.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Tips:</h3>
+      
+      <div class="space-y-2 mb-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Pay full attention.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Show that you're listening through nods or small affirmations.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Ask for clarification when unsure.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Avoid interrupting the interviewer.</span>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">10. Common Interview Questions and Examples</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Question</th>
+              <th class="px-2 py-1">Example of a Good Answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">"Tell us about yourself."</td>
+              <td class="px-2 py-1">Brief background + key skills + career goal.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">"What are your strengths?"</td>
+              <td class="px-2 py-1">"I'm good at team collaboration and meeting deadlines."</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">"Describe a challenge you faced."</td>
+              <td class="px-2 py-1">Explain how you handled a work or study-related problem using the STAR method.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">"Why do you want this job?"</td>
+              <td class="px-2 py-1">Show alignment between your skills and company goals.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">"Where do you see yourself in five years?"</td>
+              <td class="px-2 py-1">Express ambition and commitment to growth.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">11. Mock Interview Activity (Lesson Application)</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Students conducted mock interviews using their own CVs.
+        Each participant acted as both interviewer and interviewee, and peer evaluation was done using a standardized rubric assessing:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Verbal Skills</strong> (clarity, tone, fluency)</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Non-Verbal Skills</strong> (posture, eye contact, smile, confidence)</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Listening & Response</strong></p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Attitude & Professionalism</strong></p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed mt-3">
+        This hands-on experience simulated a real interview environment and provided valuable feedback for improvement.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">12. Key Takeaways</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Interviews test not only your qualifications but also your communication, confidence, and attitude.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Non-verbal cues play a major role in how you are perceived.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Research and preparation lead to better performance.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Mock interviews help you identify areas to improve before facing real ones.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">13. My Mock Interview Experience & Learning Reflection</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        During our mock interview session, I had the opportunity to experience a real-world interview setup.
+        At first, I felt slightly nervous, but I gradually became more comfortable as I focused on my preparation and communication skills.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">My Strengths</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Maintained good eye contact and professional posture.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Spoke clearly and confidently about my academic background and skills.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Demonstrated enthusiasm and a positive attitude.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2 mt-4">Areas for Improvement</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-up-from-bracket text-amber-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">I need to manage my nervousness during initial minutes of the interview.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-up-from-bracket text-amber-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">I plan to practice answering unexpected questions to be more spontaneous.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-up-from-bracket text-amber-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">I should refine my closing statements to leave a strong final impression.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2 mt-4">What I Learned</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Preparation and practice build confidence.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Body language and tone communicate as much as words do.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Constructive feedback from peers helped me recognize my strengths and weaknesses.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Overall, this activity improved my self-awareness and taught me how to present my skills professionally under pressure.</strong>
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">14. My Personal Statement</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        The mock interview experience was a turning point in developing my professional confidence.
+        I realized that every interview is an opportunity to show not only my qualifications but also my personality, attitude, and growth mindset.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Going forward, I aim to continuously improve my communication and interview skills through regular practice and feedback.
+        I will focus on refining my answers, maintaining a calm tone, and showing genuine enthusiasm for the roles I apply for.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        This lesson taught me to approach interviews not as a test, but as a conversation to show my potential and professional value.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">15. Related Documents</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="https://drive.google.com/file/d/11MchBGDBL_b_fLB_XQ1VlsXKSBbN-pSO/view?usp=drive_link" target="_blank" class="block border border-indigo-200 rounded-xl p-4 hover:bg-indigo-50 transition">
+          <div class="flex items-center">
+            <i class="fa-solid fa-file-lines text-indigo-500 text-xl mr-3"></i>
+            <div>
+              <h3 class="font-bold text-slate-900">Cover Letter</h3>
+              <p class="text-slate-600 text-sm">View my cover letter for this lesson</p>
+            </div>
+          </div>
+        </a>
+        
+        <a href="https://drive.google.com/file/d/1zg9NMIiGh9F0Ko9hMuONKms4zjpG7K79/view?usp=sharing" target="_blank" class="block border border-indigo-200 rounded-xl p-4 hover:bg-indigo-50 transition">
+          <div class="flex items-center">
+            <i class="fa-solid fa-file-circle-check text-indigo-500 text-xl mr-3"></i>
+            <div>
+              <h3 class="font-bold text-slate-900">Curriculum Vitae</h3>
+              <p class="text-slate-600 text-sm">View my CV for this lesson</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-4 mt-8">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-8 h-8 object-cover border-2 border-indigo-600 shadow-md" />
+        <div>
+          <h2 class="text-white font-extrabold text-sm">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-xs">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-lg">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

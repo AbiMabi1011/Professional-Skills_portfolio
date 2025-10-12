@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 1 - Professional Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Animated background elements */
+    .animated-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+      animation: floatOrb 15s ease-in-out infinite;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation: floatOrbReverse 18s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    /* Additional animated shapes */
+    .animated-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.05;
+      filter: blur(60px);
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background: #6366f1;
+      top: 10%;
+      left: 5%;
+      animation: floatShape 20s ease-in-out infinite;
+    }
+
+    .shape-2 {
+      width: 250px;
+      height: 250px;
+      background: #f59e0b;
+      bottom: 20%;
+      right: 10%;
+      animation: floatShapeReverse 25s ease-in-out infinite;
+      animation-delay: 5s;
+    }
+
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      background: #ec4899;
+      top: 60%;
+      left: 15%;
+      animation: floatShape 30s ease-in-out infinite;
+      animation-delay: 10s;
+    }
+
+    /* Animations */
+    @keyframes floatOrb {
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(20px, -30px) rotate(5deg);
+      }
+      50% {
+        transform: translate(40px, 10px) rotate(10deg);
+      }
+      75% {
+        transform: translate(10px, 40px) rotate(-5deg);
+      }
+    }
+
+    @keyframes floatOrbReverse {
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(-30px, 20px) rotate(-5deg);
+      }
+      50% {
+        transform: translate(-10px, -40px) rotate(-10deg);
+      }
+      75% {
+        transform: translate(-40px, -10px) rotate(5deg);
+      }
+    }
+
+    @keyframes floatShape {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(50px, 30px);
+      }
+      50% {
+        transform: translate(100px, -20px);
+      }
+      75% {
+        transform: translate(30px, -60px);
+      }
+    }
+
+    @keyframes floatShapeReverse {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(-40px, -50px);
+      }
+      50% {
+        transform: translate(-80px, 20px);
+      }
+      75% {
+        transform: translate(-20px, 70px);
+      }
+    }
+
+    @keyframes pulseOrb {
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        opacity: .25;
+        transform: translateY(-20px) scale(1.05);
+      }
+    }
+
+    .section-divider {
+      border-top: 2px solid #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .johari-quadrant {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .johari-quadrant:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    .skill-category-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .skill-category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .key-point {
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .note {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Elements -->
+  <div class="animated-bg" aria-hidden="true">
+    <div class="animated-shape shape-1"></div>
+    <div class="animated-shape shape-2"></div>
+    <div class="animated-shape shape-3"></div>
+  </div>
+  
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="PS_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <nav class="mb-4">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="PS_index.html" class="hover:text-indigo-600">Professional Skills</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week 1 - Introduction to Professional Skills</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-14 h-14 bg-indigo-100 rounded-full mb-3">
+        <i class="fa-solid fa-1 text-xl text-indigo-600"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Week <span class="gradient-text">1</span>: Introduction to Professional Skills
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+        Understanding the importance of professional skills in career development and workplace success
+      </p>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl shadow-lg p-6 mb-8 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-4">
+            <i class="fa-solid fa-1 text-2xl text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-1">Week 1: Introduction to Professional Skills</h2>
+            <p class="text-indigo-100 text-sm">Understanding the importance of professional skills in career development and workplace success</p>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2">
+          <span class="text-white font-semibold">Foundational Skills</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-4 max-w-6xl mx-auto">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">1. Lesson Overview</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Professional skills, also known as soft skills or employability skills, are non-technical abilities that are essential for success in any workplace.
+        These skills complement technical expertise and are highly valued by employers across all industries.
+      </p>
+      <p class="text-slate-700 mb-4 text-sm leading-relaxed">
+        This lesson introduced the fundamental concepts of professional skills, their importance in career development, and how they differ from technical skills.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">2. Lesson Objectives</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        By the end of this lesson, you should be able to:
+      </p>
+      
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Define professional skills and understand their significance.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Differentiate between technical and professional skills.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Identify key professional skills required in the workplace.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Understand how professional skills contribute to career advancement.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Begin developing a personal plan for improving professional skills.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">3. What Are Professional Skills?</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Professional skills, also known as soft skills or interpersonal skills, are personal attributes that enable someone to interact effectively and harmoniously with other people.
+        These skills are not job-specific and can be applied across various roles and industries.
+      </p>
+      <p class="text-slate-700 mb-4 text-sm leading-relaxed">
+        Unlike technical skills which are teachable and quantifiable, professional skills are more subjective and relate to character, attitude, and behavior.
+      </p>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Examples:</h3>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Communication</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Teamwork</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Leadership</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Problem-solving</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Time Management</span>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Why They Matter:</strong> Professional skills help individuals fit into an organization's culture, collaborate effectively, and stand out beyond technical expertise.
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">4. Technical vs. Professional Skills</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Technical Skills</th>
+              <th class="px-2 py-1">Professional Skills</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Job-specific abilities</td>
+              <td class="px-2 py-1">Interpersonal abilities</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Learned through education/training</td>
+              <td class="px-2 py-1">Developed through experience</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Quantifiable and measurable</td>
+              <td class="px-2 py-1">Subjective and behavioral</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Examples: Programming, Accounting</td>
+              <td class="px-2 py-1">Examples: Communication, Leadership</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Become obsolete over time</td>
+              <td class="px-2 py-1">Improve with practice</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-lightbulb text-yellow-500 mr-1 text-xs"></i>
+          <strong>Balance is Key:</strong> Both technical and professional skills are essential for career success. Technical skills get you hired, but professional skills help you advance.
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">5. Key Professional Skills</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-comments text-indigo-500 mr-1 text-xs"></i> Communication</h3>
+          <p class="text-slate-700 text-sm">Expressing ideas clearly and listening actively.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-users text-indigo-500 mr-1 text-xs"></i> Teamwork</h3>
+          <p class="text-slate-700 text-sm">Collaborating effectively with others.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-brain text-indigo-500 mr-1 text-xs"></i> Problem-solving</h3>
+          <p class="text-slate-700 text-sm">Identifying and resolving challenges creatively.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-lightbulb text-indigo-500 mr-1 text-xs"></i> Critical Thinking</h3>
+          <p class="text-slate-700 text-sm">Analyzing information objectively to make decisions.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-clock text-indigo-500 mr-1 text-xs"></i> Time Management</h3>
+          <p class="text-slate-700 text-sm">Prioritizing tasks and meeting deadlines efficiently.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-sync-alt text-indigo-500 mr-1 text-xs"></i> Adaptability</h3>
+          <p class="text-slate-700 text-sm">Adjusting to changes and learning new skills.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-user-tie text-indigo-500 mr-1 text-xs"></i> Leadership</h3>
+          <p class="text-slate-700 text-sm">Guiding and motivating others toward goals.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-handshake text-indigo-500 mr-1 text-xs"></i> Interpersonal Skills</h3>
+          <p class="text-slate-700 text-sm">Building and maintaining positive relationships.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">6. The Importance of Professional Skills</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm">Career Advancement</h3>
+            <p class="text-slate-700 text-sm">Essential for promotions and leadership roles.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm">Workplace Success</h3>
+            <p class="text-slate-700 text-sm">Enable effective collaboration and productivity.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm">Employability</h3>
+            <p class="text-slate-700 text-sm">Highly valued by employers across industries.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm">Personal Growth</h3>
+            <p class="text-slate-700 text-sm">Contribute to self-confidence and emotional intelligence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">7. Developing Professional Skills</h2>
+      <p class="text-slate-700 mb-4 text-sm leading-relaxed">
+        Professional skills can be developed through various methods:
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-graduation-cap text-indigo-500 mr-1 text-xs"></i> Formal Training</h3>
+          <p class="text-slate-700 text-sm">Workshops, courses, and seminars.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-user-friends text-indigo-500 mr-1 text-xs"></i> Peer Interaction</h3>
+          <p class="text-slate-700 text-sm">Learning from colleagues and mentors.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-book-open text-indigo-500 mr-1 text-xs"></i> Self-Study</h3>
+          <p class="text-slate-700 text-sm">Reading books and articles on soft skills.</p>
+        </div>
+        
+        <div class="tip-card p-3">
+          <h3 class="font-bold text-slate-900 mb-1 text-sm"><i class="fa-solid fa-practice text-indigo-500 mr-1 text-xs"></i> Practice</h3>
+          <p class="text-slate-700 text-sm">Applying skills in real-life situations.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">8. Key Takeaways</h2>
+      <div class="bg-indigo-50 rounded-xl p-3 mt-4">
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2 text-sm"></i>
+            <span class="text-indigo-700 text-sm">Professional skills are non-technical abilities that are crucial for workplace success.</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2 text-sm"></i>
+            <span class="text-indigo-700 text-sm">They complement technical skills and are often more important for career advancement.</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2 text-sm"></i>
+            <span class="text-indigo-700 text-sm">Professional skills can be developed and improved over time with practice and dedication.</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2 text-sm"></i>
+            <span class="text-indigo-700 text-sm">Employers value candidates with strong professional skills as they contribute to team dynamics and organizational culture.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">9. My Learning Reflection</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        This lesson helped me understand that professional skills are just as important as technical skills in my career development.
+        I realized that while I may have strong technical abilities, my success in the workplace will largely depend on how well I can communicate, collaborate, and adapt to different situations.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I learned that professional skills are not innate talents but can be developed through conscious effort and practice.
+        This insight has motivated me to actively work on improving my communication, teamwork, and leadership abilities alongside my technical expertise.
+      </p>
+      
+      <div class="bg-gradient-to-r from-amber-50 to-indigo-50 rounded-xl p-3 mt-4 border-l-2 border-amber-500">
+        <h3 class="font-bold text-amber-800 text-sm mb-1"><i class="fa-solid fa-user mr-1 text-xs"></i>🧩 Personal Statement</h3>
+        <p class="text-amber-700 text-sm">
+          I am committed to developing both my technical and professional skills to become a well-rounded professional.
+          I recognize that my ability to work effectively with others, communicate clearly, and adapt to changing environments will be key to my long-term success.
+          I plan to seek opportunities to practice and improve these skills in both academic and professional settings.
+        </p>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="max-w-6xl mx-auto mt-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Learning Resources</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="images/week1/image1.jpeg" alt="Professional Skills Workshop" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">Skills Workshop</h3>
+            <p class="text-slate-600 text-xs mt-1">Group activity session</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="images/week1/image2.jpeg" alt="Team Collaboration" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">Team Collaboration</h3>
+            <p class="text-slate-600 text-xs mt-1">Group discussion</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="images/week1/image3.jpeg" alt="Presentation Skills" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">Presentation Practice</h3>
+            <p class="text-slate-600 text-xs mt-1">Public speaking</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="images/week1/image4.jpeg" alt="Professional Development" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">Development Plan</h3>
+            <p class="text-slate-600 text-xs mt-1">Personal growth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-4 mt-8">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-8 h-8 object-cover border-2 border-indigo-600 shadow-md" />
+        <div>
+          <h2 class="text-white font-extrabold text-sm">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-xs">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-lg">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
