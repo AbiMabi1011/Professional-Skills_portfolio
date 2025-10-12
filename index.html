@@ -263,6 +263,21 @@
         transform: translateY(-20px)
       }
     }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+      }
+    }
   </style>
 </head>
 
@@ -332,9 +347,10 @@
                     text-slate-700 hover:text-indigo-700 hover:bg-indigo-50/70 transition-colors">
             <i class="fa-solid fa-diagram-project me-2"></i> Projects
           </a>
-          <a href="PS_index.html" aria-label="Personal Skills" class="nav-chip inline-flex items-center h-10 px-4 rounded-full text-sm font-semibold
-                    text-slate-700 hover:text-indigo-700 hover:bg-indigo-50/70 transition-colors">
-            <i class="fa-solid fa-star me-2"></i> Personal Skills
+          <a href="PS_index.html" aria-label="Professional Skills" class="nav-chip inline-flex items-center h-10 px-4 rounded-full text-sm font-semibold
+                    text-slate-700 hover:text-indigo-700 hover:bg-indigo-50/70 transition-colors relative">
+            <i class="fa-solid fa-star me-2"></i> Professional Skills
+            <span class="absolute -top-2 -right-2 bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">Module</span>
           </a>
           <a href="#skills" data-target="#skills" aria-label="Skills" class="nav-chip inline-flex items-center h-10 px-4 rounded-full text-sm font-semibold
                     text-slate-700 hover:text-indigo-700 hover:bg-indigo-50/70 transition-colors">
@@ -368,7 +384,10 @@
           <a href="#about" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">About</a>
           <a href="#experience" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Experience</a>
           <a href="#projects" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Projects</a>
-          <a href="PS_index.html" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Personal Skills</a>
+          <a href="PS_index.html" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50 relative">
+            Professional Skills
+            <span class="absolute -top-1 -right-1 bg-indigo-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">Module</span>
+          </a>
           <a href="#skills" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Skills</a>
           <a href="#education" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Education</a>
           <a href="#contact" class="mobile-chip text-center py-2 rounded-xl hover:bg-indigo-50">Contact</a>
