@@ -127,12 +127,11 @@
 
     /* === Animated Skill Bar === */
     .morph-skill-bar {
-      height: 8px;
+      height: 12px;
       background: #e2e8f0;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       margin-top: 6px;
-      margin-bottom: 10px;
     }
 
     .morph-skill-fill {
@@ -140,7 +139,6 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       width: 0%;
       transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-      border-radius: 4px;
     }
 
     /* === Terminal Style === */
@@ -227,15 +225,15 @@
       justify-content: center;
       align-items: center;
       perspective: 1200px;
-      height: 600px;
+      height: 500px;
       position: relative;
       transform-style: preserve-3d;
     }
 
     .carousel-item {
       position: absolute;
-      width: 400px;
-      height: 500px;
+      width: 300px;
+      height: 400px;
       background: rgba(20, 20, 30, 0.85);
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -247,7 +245,7 @@
       flex-direction: column;
       overflow: hidden;
       left: 50%;
-      margin-left: -200px;
+      margin-left: -150px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transform: translateZ(0) scale(0.8) rotateY(0deg);
     }
@@ -261,13 +259,9 @@
     }
 
     .carousel-image {
-      height: 300px;
+      height: 200px;
       overflow: hidden;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(30, 30, 40, 0.7);
     }
 
     .carousel-image img {
@@ -275,32 +269,6 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease;
-    }
-
-    .carousel-image.pdf {
-      background: linear-gradient(135deg, #ff4081, #f50057);
-    }
-
-    .pdf-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .pdf-placeholder i {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .pdf-placeholder p {
-      font-size: 1rem;
-      margin: 0;
-      color: rgba(255, 255, 255, 0.8);
     }
 
     .carousel-item:hover .carousel-image img {
@@ -384,7 +352,7 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding: 0 60px;
+      padding: 0 40px;
       z-index: 20;
     }
 
@@ -456,213 +424,6 @@
       background: linear-gradient(90deg, #6600ff, #00ccff);
       border-radius: 2px;
       transition: width 0.1s linear;
-    }
-    
-    /* === SKILLS SECTION === */
-    .skills-section {
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-      border-radius: 20px;
-      margin: 40px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #1e293b;
-      margin-bottom: 15px;
-    }
-    
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: #64748b;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .tab-headers {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    
-    .tab-header {
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      background: white;
-      color: #1e293b;
-      border: none;
-      font-size: 1rem;
-      outline: none;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .tab-header.active {
-      background: linear-gradient(135deg, #6366f1, #4f46e5);
-      color: white;
-      box-shadow: 0 10px 15px rgba(99, 102, 241, 0.3);
-    }
-    
-    .tab-header:not(.active):hover {
-      background: #f1f5f9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    
-    .skill-card {
-      background: white;
-      border-radius: 20px;
-      padding: 25px 20px;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skill-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
-      z-index: 10;
-    }
-    
-    .hexagon-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      transition: all 0.3s ease;
-    }
-    
-    .skill-card:hover .hexagon-icon {
-      transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skill-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 10px;
-    }
-    
-    .skill-card p {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.5;
-    }
-    
-    /* === Animated Skill Bar === */
-    .morph-skill-bar {
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: 6px;
-      margin-bottom: 10px;
-    }
-    
-    .morph-skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-      border-radius: 4px;
-    }
-    
-    /* === Existing hexagon styles (preserved for backward compatibility) === */
-    .skill-categories {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    
-    .category-tab {
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-    
-    .category-tab.active {
-      background: linear-gradient(135deg, #6366f1, #4f46e5);
-      color: white;
-      box-shadow: 0 10px 15px rgba(99, 102, 241, 0.3);
-    }
-    
-    .category-tab:not(.active):hover {
-      background: #f1f5f9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skills-hexagon-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 30px;
-      padding: 20px;
-    }
-    
-    .skill-item {
-      background: white;
-      border-radius: 20px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skill-item:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
-      z-index: 10;
-    }
-    
-    .skill-item:hover .hexagon-icon {
-      transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skill-item h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 10px;
-    }
-    
-    .skill-item p {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.5;
     }
   </style>
 </head>
@@ -988,637 +749,121 @@
     </section>
 
     <!-- Skills Section – Enhanced -->
-    <section class="skills-section py-12 bg-gradient-to-b from-white to-indigo-50 rounded-2xl shadow-lg max-w-7xl mx-auto px-4 scroll-fade" id="skills">
-      <div class="skills-container">
-        <div class="section-header mb-8 text-center max-w-2xl mx-auto">
-          <h2 class="section-title text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">
-            Technical <span class="gradient-text">Arsenal</span>
-          </h2>
-          <p class="section-subtitle text-base text-slate-700">Mastery of cutting-edge technologies and frameworks</p>
-        </div>
-        
-        <!-- Tabbed Interface -->
-        <div class="tab-container">
-          <!-- Tab Headers -->
-          <div class="tab-headers">
-            <button class="tab-header active" data-tab="technical">Technical Skills</button>
-            <button class="tab-header" data-tab="professional">Professional Skills</button>
-            <button class="tab-header" data-tab="tools">Tools & Platforms</button>
-
+    <section class="py-12 bg-gradient-to-b from-white to-indigo-50 rounded-2xl shadow-lg max-w-7xl mx-auto px-4 scroll-fade" id="skills">
+      <div class="mb-8 text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">
+          My <span class="gradient-text">Skills</span>
+        </h2>
+        <p class="text-base text-slate-700">The technical and professional skills I bring to your project</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Technical Skills -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 h-full">
+          <div class="flex items-center mb-6">
+            <div class="p-3 bg-indigo-100 rounded-2xl text-indigo-600 mr-4 shadow"><i class="fas fa-code text-2xl"></i></div>
+            <h3 class="text-2xl font-extrabold text-slate-900">Technical Skills</h3>
           </div>
-          
-          <!-- Tab Content -->
-          <div class="tab-content">
-            <!-- Technical Skills Tab -->
-            <div class="tab-pane active" id="technical-tab">
-              <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Skill Item 1 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-html5 text-2xl text-indigo-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">HTML/CSS</h3>
-                      <p class="text-slate-600 text-sm mb-3">Semantic markup and responsive design</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="95" style="width: 95%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">95%</span>
-                    </div>
-                  </div>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-semibold text-slate-800 mb-2 text-lg tracking-wide">Programming Languages</h4>
+              <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                <div><span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Java</span>
+                  <div class="morph-skill-bar"><div class="morph-skill-fill" data-pct="85"></div></div>
                 </div>
-                
-                <!-- Skill Item 2 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-js text-2xl text-yellow-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">JavaScript</h3>
-                      <p class="text-slate-600 text-sm mb-3">Dynamic interactions and modern ES6+</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="90" style="width: 90%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">90%</span>
-                    </div>
-                  </div>
+                <div><span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Python</span>
+                  <div class="morph-skill-bar"><div class="morph-skill-fill" data-pct="75"></div></div>
                 </div>
-                
-                <!-- Skill Item 3 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-react text-2xl text-blue-400"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">React</h3>
-                      <p class="text-slate-600 text-sm mb-3">Component-based UI development</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
+                <div><span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">PHP</span>
+                  <div class="morph-skill-bar"><div class="morph-skill-fill" data-pct="90"></div></div>
                 </div>
-                
-                <!-- Skill Item 4 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-php text-2xl text-indigo-700"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">PHP</h3>
-                      <p class="text-slate-600 text-sm mb-3">Server-side scripting and development</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="88" style="width: 88%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">88%</span>
-                    </div>
-                  </div>
+                <div><span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">JavaScript</span>
+                  <div class="morph-skill-bar"><div class="morph-skill-fill" data-pct="80"></div></div>
                 </div>
-                
-                <!-- Skill Item 5 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-laravel text-2xl text-red-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Laravel</h3>
-                      <p class="text-slate-600 text-sm mb-3">Elegant PHP framework for web apps</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="87" style="width: 87%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">87%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 6 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-python text-2xl text-blue-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Python</h3>
-                      <p class="text-slate-600 text-sm mb-3">Versatile programming for multiple domains</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="82" style="width: 82%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">82%</span>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 mb-2 text-lg tracking-wide">Web Development</h4>
+              <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Laravel</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">React</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">HTML/CSS</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Bootstrap</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 mb-2 text-lg tracking-wide">Mobile Development</h4>
+              <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Android</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Flutter</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 mb-2 text-lg tracking-wide">Database & Tools</h4>
+              <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">MySQL</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">MongoDB</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Git</span>
+                <span class="skill-pill text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full select-none ring-1 ring-indigo-200/60">Figma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Professional Skills -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 h-full">
+          <div class="flex items-center mb-6">
+            <div class="p-3 bg-amber-100 rounded-2xl text-amber-600 mr-4 shadow"><i class="fas fa-user-tie text-2xl"></i></div>
+            <h3 class="text-2xl font-extrabold text-slate-900">Professional Skills</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow flex-shrink-0"><i class="fas fa-brain text-2xl"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-0.5">Problem Solving</h4>
+                <p class="text-slate-600 text-base leading-relaxed max-w-lg">
+                  Strong analytical skills to break down complex problems and develop effective solutions.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow flex-shrink-0"><i class="fas fa-users text-2xl"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-0.5">Teamwork</h4>
+                <p class="text-slate-600 text-base leading-relaxed max-w-lg">
+                  Collaborative approach with excellent communication skills for effective teamwork.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow flex-shrink-0"><i class="fas fa-lightbulb text-2xl"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-0.5">Creativity</h4>
+                <p class="text-slate-600 text-base leading-relaxed max-w-lg">
+                  Innovative thinking to develop unique solutions and approaches.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow flex-shrink-0"><i class="fas fa-clock text-2xl"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-0.5">Time Management</h4>
+                <p class="text-slate-600 text-base leading-relaxed max-w-lg">
+                  Efficient organization and prioritization to meet deadlines.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow flex-shrink-0"><i class="fas fa-book text-2xl"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-0.5">Self-Learning</h4>
+                <p class="text-slate-600 text-base leading-relaxed max-w-lg">
+                  Proactive in acquiring new skills and staying updated with technology trends.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Education -->
-            <!-- Professional Skills Tab -->
-            <div class="tab-pane hidden" id="professional-tab">
-              <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Skill Item 1 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-users text-2xl text-indigo-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Team Collaboration</h3>
-                      <p class="text-slate-600 text-sm mb-3">Working effectively in agile teams</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="92" style="width: 92%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">92%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 2 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-comments text-2xl text-green-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Communication</h3>
-                      <p class="text-slate-600 text-sm mb-3">Clear technical and non-technical communication</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="88" style="width: 88%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">88%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 3 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-lightbulb text-2xl text-amber-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Problem Solving</h3>
-                      <p class="text-slate-600 text-sm mb-3">Analytical thinking and creative solutions</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="94" style="width: 94%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">94%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 4 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-tasks text-2xl text-blue-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Project Management</h3>
-                      <p class="text-slate-600 text-sm mb-3">Planning and executing development projects</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 5 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-book text-2xl text-purple-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Research</h3>
-                      <p class="text-slate-600 text-sm mb-3">Technical research and documentation</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="90" style="width: 90%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">90%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 6 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-chalkboard-teacher text-2xl text-rose-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Mentoring</h3>
-                      <p class="text-slate-600 text-sm mb-3">Guiding junior developers and peers</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Additional professional skills -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-project-diagram text-2xl text-indigo-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">API Integration</h3>
-                      <p class="text-slate-600 text-sm mb-3">Connecting and integrating various APIs</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-database text-2xl text-green-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Database Design</h3>
-                      <p class="text-slate-600 text-sm mb-3">Designing efficient database structures</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-chart-pie text-2xl text-blue-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Data Analysis</h3>
-                      <p class="text-slate-600 text-sm mb-3">Analyzing and interpreting data insights</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-tasks text-2xl text-amber-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Agile Methodology</h3>
-                      <p class="text-slate-600 text-sm mb-3">Working with Scrum and Agile practices</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Tools & Platforms Tab -->
-            <div class="tab-pane hidden" id="tools-tab">
-              <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Skill Item 1 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-git-alt text-2xl text-orange-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Git</h3>
-                      <p class="text-slate-600 text-sm mb-3">Version control and collaboration</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="90" style="width: 90%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">90%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 2 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-docker text-2xl text-blue-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Docker</h3>
-                      <p class="text-slate-600 text-sm mb-3">Containerization and deployment</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="75" style="width: 75%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">75%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 3 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-cloud text-2xl text-sky-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">AWS</h3>
-                      <p class="text-slate-600 text-sm mb-3">Cloud infrastructure and services</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="70" style="width: 70%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">70%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 4 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-database text-2xl text-emerald-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">MySQL</h3>
-                      <p class="text-slate-600 text-sm mb-3">Relational database management</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 5 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-bootstrap text-2xl text-purple-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Bootstrap</h3>
-                      <p class="text-slate-600 text-sm mb-3">Rapid UI prototyping and design</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="90" style="width: 90%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">90%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Skill Item 6 -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-terminal text-2xl text-gray-700"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Linux</h3>
-                      <p class="text-slate-600 text-sm mb-3">Command-line and server management</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- New Data & Analytics Tools -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-chart-bar text-2xl text-blue-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Power BI</h3>
-                      <p class="text-slate-600 text-sm mb-3">Data visualization and dashboarding</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="75" style="width: 75%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">75%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-file-excel text-2xl text-green-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Excel</h3>
-                      <p class="text-slate-600 text-sm mb-3">Spreadsheet and data analysis</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-jira text-2xl text-blue-400"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Jira</h3>
-                      <p class="text-slate-600 text-sm mb-3">Project management and issue tracking</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- New Frameworks & Libraries -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-angular text-2xl text-red-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Angular</h3>
-                      <p class="text-slate-600 text-sm mb-3">Frontend framework for web applications</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="75" style="width: 75%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">75%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-node-js text-2xl text-green-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Node.js</h3>
-                      <p class="text-slate-600 text-sm mb-3">JavaScript runtime environment</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fab fa-react text-2xl text-blue-400"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">React</h3>
-                      <p class="text-slate-600 text-sm mb-3">JavaScript library for UI development</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- New Databases -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-database text-2xl text-green-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">MongoDB</h3>
-                      <p class="text-slate-600 text-sm mb-3">NoSQL database management</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="75" style="width: 75%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">75%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-database text-2xl text-blue-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">SQL</h3>
-                      <p class="text-slate-600 text-sm mb-3">Structured query language</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- New API Integration -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-plug text-2xl text-purple-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Open API</h3>
-                      <p class="text-slate-600 text-sm mb-3">API specification and integration</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-sync-alt text-2xl text-indigo-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">RESTful APIs</h3>
-                      <p class="text-slate-600 text-sm mb-3">Web service architecture</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- New Developer Tools -->
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-code text-2xl text-gray-700"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Dev C++</h3>
-                      <p class="text-slate-600 text-sm mb-3">Integrated development environment</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">80%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-server text-2xl text-orange-500"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">XAMPP</h3>
-                      <p class="text-slate-600 text-sm mb-3">Web server package</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skill-card bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
-                  <div class="flex items-start gap-4">
-                    <div class="hexagon-icon w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <i class="fas fa-laptop-code text-2xl text-purple-600"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 mb-1">Visual Studio</h3>
-                      <p class="text-slate-600 text-sm mb-3">Integrated development environment</p>
-                      <div class="morph-skill-bar">
-                        <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-indigo-600">85%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-
 
     <!-- Education -->
     <section class="py-12 max-w-7xl mx-auto px-4 scroll-fade" id="education">
@@ -1678,7 +923,7 @@
             <!-- Carousel items -->
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/Python (Basic) – HackerRank.png" alt="Python (Basic) Certificate">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d09c4d5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Python (Basic) Certificate">
               </div>
               <div class="carousel-content">
                 <h3>PYTHON (BASIC)</h3>
@@ -1688,12 +933,12 @@
                   <span>HACKERRANK</span>
                   <span>PROGRAMMING</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/Python (Basic) – HackerRank.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/c# basic.png" alt="C# (Basic) Certificate">
+                <img src="https://images.unsplash.com/photo-1635069989297-25257c432635?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="C# (Basic) Certificate">
               </div>
               <div class="carousel-content">
                 <h3>C# (BASIC)</h3>
@@ -1701,14 +946,14 @@
                 <div class="carousel-tags">
                   <span>C#</span>
                   <span>HACKERRANK</span>
-                  
+                  <span>.NET</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/C# (Basic) – HackerRank.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/Problem Solving (Basic)-HackerRank.png" alt="Problem Solving Certificate">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Problem Solving Certificate">
               </div>
               <div class="carousel-content">
                 <h3>PROBLEM SOLVING</h3>
@@ -1718,27 +963,12 @@
                   <span>LOGIC</span>
                   <span>HACKERRANK</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/Problem Solving (Basic)-HackerRank.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/python for beginers.png" alt="Python for Beginners Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>PYTHON FOR BEGINNERS</h3>
-                <p>University of Moratuwa certification for introductory Python programming.</p>
-                <div class="carousel-tags">
-                  <span>PYTHON</span>
-                  <span>BEGINNER</span>
-                  <span>UNIVERSITY</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/python for beginers.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/front-end web development.png" alt="Front-End Web Development Certificate">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Front-End Web Development Certificate">
               </div>
               <div class="carousel-content">
                 <h3>FRONT-END WEB DEV</h3>
@@ -1748,12 +978,12 @@
                   <span>JAVASCRIPT</span>
                   <span>UI/UX</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/front-end web development.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/web design for beginers.png" alt="Web Design Certificate">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Web Design Certificate">
               </div>
               <div class="carousel-content">
                 <h3>WEB DESIGN</h3>
@@ -1763,97 +993,22 @@
                   <span>RESPONSIVE</span>
                   <span>BEST PRACTICES</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/web design for beginers.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
             <div class="carousel-item">
               <div class="carousel-image">
-                <img src="certificates/c# basic.png" alt="C# Basic Certificate">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Python for Beginners Certificate">
               </div>
               <div class="carousel-content">
-                <h3>C# BASIC</h3>
-                <p>Comprehensive C# programming certification covering fundamentals.</p>
-                <div class="carousel-tags">
-                  <span>C#</span>
-                  <span>PROGRAMMING</span>
-                  <span>FUNDAMENTALS</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/c# basic.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/python basic.png" alt="Python Basic Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>PYTHON BASIC</h3>
-                <p>Fundamental Python programming concepts and syntax.</p>
+                <h3>PYTHON FOR BEGINNERS</h3>
+                <p>University of Moratuwa certification for introductory Python programming.</p>
                 <div class="carousel-tags">
                   <span>PYTHON</span>
-                  <span>BASIC</span>
-                  <span>SYNTAX</span>
+                  <span>BEGINNER</span>
+                  <span>UNIVERSITY</span>
                 </div>
-                <button class="explore-btn" onclick="window.open('certificates/python basic.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/python programming.png" alt="Python Programming Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>PYTHON PROGRAMMING</h3>
-                <p>Advanced Python programming techniques and best practices.</p>
-                <div class="carousel-tags">
-                  <span>PYTHON</span>
-                  <span>ADVANCED</span>
-                  <span>PROGRAMMING</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/python programming.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/building modern projects with react.png" alt="React Development Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>REACT DEVELOPMENT</h3>
-                <p>Building modern web applications with React framework.</p>
-                <div class="carousel-tags">
-                  <span>REACT</span>
-                  <span>FRONTEND</span>
-                  <span>JAVASCRIPT</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/building modern projects with react.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/microsoft azure ai essential.png" alt="Microsoft Azure AI Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>AZURE AI ESSENTIALS</h3>
-                <p>Microsoft Azure AI fundamentals and machine learning concepts.</p>
-                <div class="carousel-tags">
-                  <span>AZURE</span>
-                  <span>AI</span>
-                  <span>MACHINE LEARNING</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/microsoft azure ai essential.png', '_blank')">VIEW CERTIFICATE</button>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-image">
-                <img src="certificates/problem solving.png" alt="Problem Solving Certificate">
-              </div>
-              <div class="carousel-content">
-                <h3>PROBLEM SOLVING</h3>
-                <p>Advanced problem solving techniques and algorithmic thinking.</p>
-                <div class="carousel-tags">
-                  <span>ALGORITHMS</span>
-                  <span>LOGIC</span>
-                  <span>ANALYTICAL</span>
-                </div>
-                <button class="explore-btn" onclick="window.open('certificates/problem solving.png', '_blank')">VIEW CERTIFICATE</button>
+                <button class="explore-btn">VIEW CERTIFICATE</button>
               </div>
             </div>
           </div>
@@ -1865,12 +1020,6 @@
           
           <div class="carousel-indicators" id="indicators">
             <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
             <div class="indicator"></div>
             <div class="indicator"></div>
             <div class="indicator"></div>
@@ -2089,92 +1238,11 @@
       }, 600);
     });
 
-    // ===== SKILLS CATEGORY FILTERING =====
+    // ===== 3D CAROUSEL =====
     document.addEventListener('DOMContentLoaded', function() {
-      // Tabbed interface functionality
-      const tabHeaders = document.querySelectorAll('.tab-header');
-      const tabPanes = document.querySelectorAll('.tab-pane');
-      
-      // Function to animate skill bars
-      function animateSkillBars() {
-        const skillBars = document.querySelectorAll('.morph-skill-fill');
-        skillBars.forEach(bar => {
-          const pct = bar.getAttribute('data-pct');
-          // Reset width to 0 for animation
-          bar.style.width = '0%';
-          // Trigger reflow
-          void bar.offsetWidth;
-          // Animate to target width
-          bar.style.width = pct + '%';
-        });
-      }
-      
-      // Add event listeners to tab headers
-      tabHeaders.forEach((header, index) => {
-        header.addEventListener('click', function() {
-          console.log('Tab header clicked:', index, this.getAttribute('data-tab'));
-          // Get tab identifier
-          const tabId = this.getAttribute('data-tab');
-          
-          // Update active tab header
-          tabHeaders.forEach(h => h.classList.remove('active'));
-          this.classList.add('active');
-          
-          // Show corresponding tab pane
-          tabPanes.forEach(pane => {
-            if (pane.id === `${tabId}-tab`) {
-              pane.classList.remove('hidden');
-              pane.classList.add('active');
-              // Animate skill bars when tab is shown
-              setTimeout(animateSkillBars, 100);
-            } else {
-              pane.classList.add('hidden');
-              pane.classList.remove('active');
-            }
-          });
-        });
-      });
-      
-      // Initial animation for the first tab
-      setTimeout(animateSkillBars, 500);
-      
-      // Category filtering functionality (preserved for backward compatibility)
-      const categoryTabs = document.querySelectorAll('.category-tab');
-      const skillItems = document.querySelectorAll('.skill-item');
-      
-      categoryTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          // Update active tab
-          categoryTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          
-          // Get category filter
-          const category = tab.getAttribute('data-category');
-          
-          // Filter skills
-          skillItems.forEach(item => {
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-              item.style.display = 'block';
-              // Add animation effect
-              item.style.opacity = '0';
-              item.style.transform = 'translateY(20px)';
-              setTimeout(() => {
-                item.style.transition = 'all 0.4s ease';
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-              }, 50);
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-      
-      // ===== 3D CAROUSEL =====
       const carousel = document.getElementById('carousel');
       const items = carousel.querySelectorAll('.carousel-item');
-      const indicatorsContainer = document.getElementById('indicators');
-      const indicators = indicatorsContainer.querySelectorAll('.indicator');
+      const indicators = document.getElementById('indicators').querySelectorAll('.indicator');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const progressBar = document.getElementById('progressBar');
@@ -2183,6 +1251,7 @@
       const totalItems = items.length;
       let autoRotate;
       let isTransitioning = false;
+      let progressInterval;
       const rotationInterval = 5000; // 5 seconds as requested
       
       // Initialize carousel
@@ -2224,7 +1293,7 @@
             item.classList.add('active');
           } else if (absOffset === 1) {
             // Adjacent items
-            translateX = sign * 450;
+            translateX = sign * 350;
             scale = 0.8;
             rotateY = sign * -25;
             rotateX = 5;
@@ -2233,7 +1302,7 @@
             item.classList.remove('active');
           } else if (absOffset === 2) {
             // Second adjacent items
-            translateX = sign * 900;
+            translateX = sign * 700;
             scale = 0.6;
             rotateY = sign * -45;
             rotateX = 10;
@@ -2242,7 +1311,7 @@
             item.classList.remove('active');
           } else {
             // Further items
-            translateX = sign * 1350;
+            translateX = sign * 1000;
             scale = 0.4;
             rotateY = sign * -60;
             rotateX = 15;
@@ -2397,7 +1466,7 @@
       }
       
       // Initialize
-      if (items.length > 0 && indicators.length === items.length) {
+      if (items.length > 0) {
         initCarousel();
         startAutoRotate();
       }
