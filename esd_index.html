@@ -4,48 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Personal Skills - Abishanan Pathmarajah</title>
+  <title>Employability Skills Development - Abishanan Pathmarajah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <script>
-    // Fallback for Font Awesome
-    window.addEventListener('load', function() {
-      if (!document.querySelector('.fa-star')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://use.fontawesome.com/releases/v6.4.0/css/all.css';
-        document.head.appendChild(link);
-      }
-    });
-  </script>
   <!-- GSAP for advanced scroll animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <script>
-    // Fallback for GSAP
-    window.addEventListener('load', function() {
-      if (typeof gsap === 'undefined') {
-        console.log('GSAP not loaded, using fallback animations');
-        // Simple fallback animation for skill bars
-        const skillBars = document.querySelectorAll('.morph-skill-fill');
-        skillBars.forEach(bar => {
-          const pct = bar.getAttribute('data-pct') || '100';
-          bar.style.transition = 'width 1s ease-in-out';
-          bar.style.width = pct + '%';
-        });
-        
-        // Ensure all scroll-fade elements are visible
-        const scrollFadeElements = document.querySelectorAll('.scroll-fade');
-        scrollFadeElements.forEach(el => {
-          el.style.transition = 'all 0.5s ease-in-out';
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        });
-      }
-    });
-  </script>
   <style>
     :root {
       --primary: #6366f1;
@@ -64,7 +30,6 @@
       position: relative;
       min-height: 100vh;
       overflow-x: hidden;
-      overflow-y: auto;
     }
 
     .gradient-text {
@@ -348,7 +313,7 @@
       <ol class="flex items-center space-x-2 text-sm text-slate-600">
         <li><a href="./index.html" class="hover:text-indigo-600">Home</a></li>
         <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
-        <li class="text-indigo-600">Professional Skills</li>
+        <li class="text-indigo-600">Employability Skills Development</li>
       </ol>
     </nav>
 
@@ -357,37 +322,38 @@
         <i class="fa-solid fa-graduation-cap text-4xl text-white" style="transform: translateZ(20px);"></i>
       </div>
       <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 relative">
-        Professional <span class="gradient-text">Skills</span> Development
+        <span class="gradient-text">Employability Skills</span> Development
         <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full"></span>
       </h1>
       <div class="max-w-4xl mx-auto relative">
         <p class="text-slate-700 text-xl leading-relaxed mb-4 px-4 py-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-indigo-100 relative" style="transform-style: preserve-3d;">
-          <span class="absolute -top-3 left-6 bg-indigo-100 text-indigo-800 text-sm font-bold px-3 py-1 rounded-full">12-Week Program</span>
-          A comprehensive journey through essential professional competencies for workplace excellence. This structured curriculum develops foundational employability skills progressing to advanced professional etiquette, preparing individuals for success in dynamic organizational environments.
+          <span class="absolute -top-3 left-6 bg-indigo-100 text-indigo-800 text-sm font-bold px-3 py-1 rounded-full">13-Week Program</span>
+          A transformative module aimed at building essential employability competencies required for success in modern professional environments. This structured program helps students align personal strengths with industry expectations through hands-on workshops, reflections, and career-focused activities.
         </p>
         <div class="flex flex-wrap justify-center gap-4 mt-8">
           <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-800 rounded-full text-sm font-semibold">
-            <i class="fas fa-check-circle mr-2"></i>Structured Curriculum
+            <i class="fas fa-check-circle mr-2"></i>Career Planning & Readiness
           </span>
           <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-200 text-amber-800 rounded-full text-sm font-semibold">
-            <i class="fas fa-chart-line mr-2"></i>Skill Progression
+            <i class="fas fa-industry mr-2"></i>Industry Awareness
           </span>
           <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 rounded-full text-sm font-semibold">
-            <i class="fas fa-user-tie mr-2"></i>Professional Development
+            <i class="fas fa-user-plus mr-2"></i>Professional Growth
+          </span>
+          <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-rose-100 to-rose-200 text-rose-800 rounded-full text-sm font-semibold">
+            <i class="fas fa-heart mr-2"></i>Personal Development
           </span>
         </div>
       </div>
     </header>
 
-
-
     <!-- Skills Progress -->
     <div class="bg-white rounded-2xl shadow-lg p-8 mb-16 scroll-fade">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Professional Skills Development Progress</h2>
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Employability Skills Development Progress</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div class="flex justify-between mb-2">
-            <span class="font-semibold text-slate-700">Communication Skills</span>
+            <span class="font-semibold text-slate-700">Career Planning</span>
             <span class="text-slate-500">92%</span>
           </div>
           <div class="morph-skill-bar">
@@ -396,16 +362,25 @@
         </div>
         <div>
           <div class="flex justify-between mb-2">
-            <span class="font-semibold text-slate-700">Leadership Abilities</span>
-            <span class="text-slate-500">88%</span>
+            <span class="font-semibold text-slate-700">Industry Awareness</span>
+            <span class="text-slate-500">89%</span>
           </div>
           <div class="morph-skill-bar">
-            <div class="morph-skill-fill" data-pct="88" style="width: 88%"></div>
+            <div class="morph-skill-fill" data-pct="89" style="width: 89%"></div>
           </div>
         </div>
         <div>
           <div class="flex justify-between mb-2">
-            <span class="font-semibold text-slate-700">Professional Etiquette</span>
+            <span class="font-semibold text-slate-700">Communication Skills</span>
+            <span class="text-slate-500">87%</span>
+          </div>
+          <div class="morph-skill-bar">
+            <div class="morph-skill-fill" data-pct="87" style="width: 87%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">Professional Growth</span>
             <span class="text-slate-500">85%</span>
           </div>
           <div class="morph-skill-bar">
@@ -414,11 +389,11 @@
         </div>
         <div>
           <div class="flex justify-between mb-2">
-            <span class="font-semibold text-slate-700">Career Development</span>
-            <span class="text-slate-500">80%</span>
+            <span class="font-semibold text-slate-700">Reflective Learning</span>
+            <span class="text-slate-500">83%</span>
           </div>
           <div class="morph-skill-bar">
-            <div class="morph-skill-fill" data-pct="80" style="width: 80%"></div>
+            <div class="morph-skill-fill" data-pct="83" style="width: 83%"></div>
           </div>
         </div>
       </div>
@@ -431,360 +406,156 @@
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-indigo-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Professional Skills</h3>
-              <span class="badge">Week 1</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 1: Employability Skills Development</h3>
+              <span class="badge">July 19, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Understanding the importance of professional skills in career development and workplace success.
+              An introduction to the Employability Skills module. Students are introduced to the concept of employability, understanding how technical and soft skills contribute to career readiness. The session focuses on personal development, identifying one's strengths and areas for improvement, and setting goals for professional growth.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Foundational Skills</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Key Focus: Self-awareness, goal setting, and understanding employability concepts</span>
             </div>
+            <a href="./session1.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-indigo-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Employability Skills</h3>
-              <span class="badge">Week 2</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 2: Introduction to Personal Skills</h3>
+              <span class="badge">July 26, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Developing core competencies required for employment success.
+              This session explores essential personal and interpersonal skills that support success in academic and professional settings. It emphasizes communication, teamwork, adaptability, and emotional intelligence. Students reflect on how these traits shape their professional image.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Job Search Skills</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Key Focus: Communication, interpersonal relationships, and emotional intelligence</span>
             </div>
+            <a href="./session2.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-indigo-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Value, Beliefs, Attitude, and Character</h3>
-              <span class="badge">Week 3</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 3: Entrepreneurship & Career Growth</h3>
+              <span class="badge">August 2, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Exploring personal values and their impact on professional behavior.
+              Students learn about entrepreneurship and its importance in the modern economy. The session encourages creative thinking, problem-solving, and developing an entrepreneurial mindset for innovation and self-driven growth.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Personal Development</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Key Focus: Innovation, creativity, and entrepreneurial mindset</span>
             </div>
+            <a href="./session3.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">CV Writing</h3>
-              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">Week 4</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 4: Career Paths Beyond IT</h3>
+              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">August 9, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Creating effective resumes and curriculum vitae documents.
+              This session introduces alternative career options outside traditional IT roles, emphasizing the value of transferable skills such as management, design, communication, and business analysis. Students explore how to adapt their technical expertise to non-technical fields.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Resume Writing</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Key Focus: Career diversification and adaptability</span>
             </div>
+            <a href="./session4.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Interview Manners (Good and Bad)</h3>
-              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">Week 5</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 5: Industry Expectations & HR Aspects</h3>
+              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">August 23, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Mastering interview techniques and professional etiquette.
+              Students gain insight into how employers assess candidates, the importance of workplace ethics, and HR's role in recruitment and performance evaluation. The discussion covers professional conduct, punctuality, teamwork, and continuous learning.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Interview Skills</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Key Focus: Professionalism, ethics, and HR perspectives</span>
             </div>
+            <a href="./session5.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Portfolio</h3>
-              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">Week 6</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 6: Stress-Free Work Techniques</h3>
+              <span class="badge bg-gradient-to-r from-amber-500 to-amber-600">November 14, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Creating professional portfolios to showcase skills and achievements.
+              This workshop focuses on maintaining mental health and productivity in demanding work environments. Students learn strategies for stress management, mindfulness, and achieving work-life balance to sustain long-term performance.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Portfolio Development</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Key Focus: Time management, mental well-being, and emotional resilience</span>
             </div>
+            <a href="./session6.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-emerald-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Meeting and Speaking Skills</h3>
-              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">Week 7</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 7: Job Roles in the IT Industry</h3>
+              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">November 21, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Developing effective communication and presentation abilities.
+              Exploring diverse IT job roles such as software engineer, data scientist, UI/UX designer, network engineer, and cybersecurity analyst. Students learn about required skill sets, responsibilities, and industry expectations for each role.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Public Speaking</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Key Focus: Technical role awareness and career specialization</span>
             </div>
+            <a href="./session7.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
 
         <div class="relative timeline-item mb-12 scroll-fade">
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-emerald-100 card-hover">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Email Writing Etiquettes</h3>
-              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">Week 8</span>
+              <h3 class="text-xl font-bold text-slate-900">Week 8: Professional and Employability Skills</h3>
+              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">November 28, 2025</span>
             </div>
             <p class="text-slate-700 mb-4">
-              Mastering professional email communication standards.
+              A consolidation of all previous learning, focusing on integrating communication, teamwork, problem-solving, and leadership into professional practice. Students prepare their portfolios and reflect on their growth throughout the module.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Business Communication</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Key Focus: Professional readiness, reflection, and presentation skills</span>
             </div>
-          </div>
-        </div>
-
-        <div class="relative timeline-item mb-12 scroll-fade">
-          <div class="bg-white rounded-2xl shadow-lg p-6 border border-emerald-100 card-hover">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Proposal Writing</h3>
-              <span class="badge bg-gradient-to-r from-emerald-500 to-emerald-600">Week 9</span>
-            </div>
-            <p class="text-slate-700 mb-4">
-              Creating compelling business proposals and project plans.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Business Development</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative timeline-item mb-12 scroll-fade">
-          <div class="bg-white rounded-2xl shadow-lg p-6 border border-rose-100 card-hover">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Team and Leadership</h3>
-              <span class="badge bg-gradient-to-r from-rose-500 to-rose-600">Week 10</span>
-            </div>
-            <p class="text-slate-700 mb-4">
-              Developing leadership capabilities and team management skills.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Leadership Development</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative timeline-item mb-12 scroll-fade">
-          <div class="bg-white rounded-2xl shadow-lg p-6 border border-rose-100 card-hover">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Emotional Intelligence</h3>
-              <span class="badge bg-gradient-to-r from-rose-500 to-rose-600">Week 11</span>
-            </div>
-            <p class="text-slate-700 mb-4">
-              Understanding and applying emotional intelligence in professional settings.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Self-Awareness</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative timeline-item mb-12 scroll-fade">
-          <div class="bg-white rounded-2xl shadow-lg p-6 border border-rose-100 card-hover">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-slate-900">Dining and Grooming Etiquette</h3>
-              <span class="badge bg-gradient-to-r from-rose-500 to-rose-600">Week 12</span>
-            </div>
-            <p class="text-slate-700 mb-4">
-              Mastering professional dining etiquette and personal grooming standards.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Professional Etiquette</span>
-            </div>
+            <a href="./session8.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <i class="fas fa-external-link-alt mr-2"></i> View Session Details
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Weeks Grid -->
-    <div class="mb-16 scroll-fade">
-      <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center">Weekly Modules</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Week 1 -->
-        <a href="./week1.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
-              <i class="fa-solid fa-1 text-2xl text-indigo-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 1</h3>
-          <p class="text-slate-600 text-sm">Professional Skills</p>
-        </a>
-
-        <!-- Week 2 -->
-        <a href="./week2.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
-              <i class="fa-solid fa-2 text-2xl text-indigo-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 2</h3>
-          <p class="text-slate-600 text-sm">Employability Skills</p>
-        </a>
-
-        <!-- Week 3 -->
-        <a href="./week3.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
-              <i class="fa-solid fa-3 text-2xl text-indigo-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 3</h3>
-          <p class="text-slate-600 text-sm">Value, Beliefs, Attitude, and Character</p>
-        </a>
-
-        <!-- Week 4 -->
-        <a href="./week4.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-              <i class="fa-solid fa-4 text-2xl text-amber-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 4</h3>
-          <p class="text-slate-600 text-sm">CV Writing</p>
-        </a>
-
-        <!-- Week 5 -->
-        <a href="./week5.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-              <i class="fa-solid fa-5 text-2xl text-amber-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 5</h3>
-          <p class="text-slate-600 text-sm">Interview Manners (Good and Bad)</p>
-        </a>
-
-        <!-- Week 6 -->
-        <a href="./week6.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-              <i class="fa-solid fa-6 text-2xl text-amber-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 6</h3>
-          <p class="text-slate-600 text-sm">Portfolio</p>
-        </a>
-
-        <!-- Week 7 -->
-        <a href="./week7.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
-              <i class="fa-solid fa-7 text-2xl text-emerald-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 7</h3>
-          <p class="text-slate-600 text-sm">Meeting and Speaking Skills</p>
-        </a>
-
-        <!-- Week 8 -->
-        <a href="./week8.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
-              <i class="fa-solid fa-8 text-2xl text-emerald-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 8</h3>
-          <p class="text-slate-600 text-sm">Email Writing Etiquettes</p>
-        </a>
-
-        <!-- Week 9 -->
-        <a href="./week9.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all">
-              <i class="fa-solid fa-9 text-2xl text-emerald-600"></i>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 9</h3>
-          <p class="text-slate-600 text-sm">Proposal Writing</p>
-        </a>
-
-        <!-- Week 10 -->
-        <a href="./week10.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
-              <div class="flex">
-                <i class="fa-solid fa-1 text-2xl text-rose-600"></i>
-                <i class="fa-solid fa-0 text-2xl text-rose-600 -ml-1"></i>
-              </div>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 10</h3>
-          <p class="text-slate-600 text-sm">Team and Leadership</p>
-        </a>
-
-        <!-- Week 11 -->
-        <a href="./week11.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
-              <div class="flex">
-                <i class="fa-solid fa-1 text-2xl text-rose-600"></i>
-                <i class="fa-solid fa-1 text-2xl text-rose-600 -ml-1"></i>
-              </div>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 11</h3>
-          <p class="text-slate-600 text-sm">Emotional Intelligence</p>
-        </a>
-
-        <!-- Week 12 -->
-        <a href="./week12.html" class="skill-card p-6 text-center group card-hover">
-          <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-rose-200 group-hover:to-rose-300 transition-all">
-              <div class="flex">
-                <i class="fa-solid fa-1 text-2xl text-rose-600"></i>
-                <i class="fa-solid fa-2 text-2xl text-rose-600 -ml-1"></i>
-              </div>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Week 12</h3>
-          <p class="text-slate-600 text-sm">Dining and Grooming Etiquette</p>
-        </a>
-
-        <!-- Food Fiesta -->
-        <a href="./food_fiesta.html" class="skill-card p-6 text-center group col-span-1 sm:col-span-2 lg:col-span-4 xl:col-span-4 card-hover">
-          <div class="flex flex-col md:flex-row items-center">
-            <div class="mb-4 md:mb-0 md:mr-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-                <i class="fa-solid fa-utensils text-2xl text-amber-600"></i>
-              </div>
-            </div>
-            <div class="text-center md:text-left">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Food Fiesta</h3>
-              <p class="text-slate-600">Culinary exploration and creative project showcasing cultural appreciation through cuisine</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Professional Skills Module Outline -->
-        <a href="./skills_module.html" class="skill-card p-6 text-center group col-span-1 sm:col-span-2 lg:col-span-4 xl:col-span-4 card-hover">
-          <div class="flex flex-col md:flex-row items-center">
-            <div class="mb-4 md:mb-0 md:mr-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all">
-                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-600"></i>
-              </div>
-            </div>
-            <div class="text-center md:text-left">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Skills Module Outline</h3>
-              <p class="text-slate-600">Comprehensive overview of the 12-week professional skills development program with detailed learning objectives</p>
-            </div>
-          </div>
-        </a>
-      </div>
+    <!-- Summary -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-16 scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Summary</h2>
+      <p class="text-slate-700 text-lg leading-relaxed">
+        The <strong>Employability Skills Development</strong> module was a comprehensive journey that combined academic learning with real-world application. It strengthened my ability to understand professional environments, communicate effectively, plan a career path, and maintain personal well-being.
+        Through continuous reflection, assessments, and creative portfolio work, I developed the confidence and skill set necessary for success in both IT and non-IT careers.
+      </p>
     </div>
   </main>
 
