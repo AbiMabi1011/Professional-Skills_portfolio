@@ -4,22 +4,27 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Food Fiesta - Personal Skills - Abishanan Pathmarajah</title>
+  <title>Food Fiesta - Professional Skills Celebration - Abishanan Pathmarajah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <!-- GSAP for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <style>
     :root {
       --primary: #6366f1;
       --primary-dark: #4f46e5;
       --secondary: #f59e0b;
+      --accent: #10b981;
+      --dark: #0f172a;
+      --light: #f8fafc;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: #1e293b;
+      background: linear-gradient(135deg, #f0f4ff 0%, #fefaf0 50%, #f0fdf4 100%);
+      color: var(--dark);
       scroll-behavior: smooth;
       position: relative;
       min-height: 100vh;
@@ -31,16 +36,33 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      background-size: 300% 300%;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     .card-hover {
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
     }
 
     .card-hover:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px -10px rgba(99, 102, 241, 0.3);
       z-index: 10;
+    }
+
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
 
     /* Background orbs */
@@ -73,17 +95,149 @@
     }
 
     @keyframes pulseOrb {
+      0%, 100% { opacity: .15; transform: translateY(0); }
+      50% { opacity: .25; transform: translateY(-25px); }
+    }
 
-      0%,
-      100% {
-        opacity: .15;
-        transform: translateY(0)
-      }
+    /* Animated Skill Bar */
+    .morph-skill-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
 
-      50% {
-        opacity: .25;
-        transform: translateY(-20px)
-      }
+    .morph-skill-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Scroll Fade */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--primary), var(--secondary));
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark);
+    }
+
+    .section-divider {
+      border-top: 2px solid #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .key-point {
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .note {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Badge styling */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Gallery image styling */
+    .gallery-img {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Grid gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .gallery-item {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-item .caption {
+      padding: 0.75rem;
+      background: white;
+      text-align: center;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    /* Reduced Motion Fallback */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; }
+      .tech-orb, canvas { display: none !important; }
+    }
+
+    /* Fallback to ensure content visibility */
+    header, main, footer, .scroll-fade {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+    
+    /* Ensure all links are clickable */
+    a {
+      pointer-events: auto !important;
     }
   </style>
 </head>
@@ -99,8 +253,8 @@
   <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="index.html" class="flex items-center gap-4">
-          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+        <a href="./index.html" class="flex items-center gap-4">
+          <img src="./abi.JPG" alt="Abishanan Pathmarajah"
                class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
           <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
             Abishanan <span class="text-indigo-600">Pathmarajah</span>
@@ -109,15 +263,15 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="PS_index.html"
+        <a href="./PS_index.html"
            class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
           <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
         </a>
-        <a href="index.html"
+        <a href="./index.html"
            class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
           <i class="fa-solid fa-house mr-2"></i> Home
         </a>
-        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+        <a href="./resume/Abishanan_Pathmarajah_cv.pdf" download
            class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
                   text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
           <i class="fas fa-download mr-2"></i> Download Résumé
@@ -127,173 +281,257 @@
   </header>
 
   <!-- ===== CONTENT ===== -->
-  <main class="max-w-7xl mx-auto px-6 py-12">
-    <nav class="mb-8">
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <nav class="mb-4 scroll-fade">
       <ol class="flex items-center space-x-2 text-sm text-slate-600">
-        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="./index.html" class="hover:text-indigo-600">Home</a></li>
         <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
-        <li><a href="PS_index.html" class="hover:text-indigo-600">Personal Skills</a></li>
+        <li><a href="./PS_index.html" class="hover:text-indigo-600">Professional Skills</a></li>
         <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
-        <li class="text-indigo-600">Food Fiesta</li>
+        <li class="text-indigo-600">Food Fiesta Celebration</li>
       </ol>
     </nav>
 
-    <header class="text-center mb-16">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-amber-100 rounded-full mb-6">
-        <i class="fa-solid fa-utensils text-3xl text-amber-600"></i>
+    <header class="text-center mb-8 scroll-fade">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl mb-4 shadow-lg floating card-hover" style="transform-style: preserve-3d;">
+        <i class="fa-solid fa-utensils text-2xl text-white" style="transform: translateZ(15px);"></i>
       </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-        <span class="gradient-text">Food Fiesta</span>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        Our <span class="gradient-text">Food Fiesta</span>
       </h1>
-      <p class="text-slate-600 max-w-2xl mx-auto text-lg">
-        Culinary exploration and food project development
+      <p class="text-slate-700 max-w-2xl mx-auto text-lg leading-relaxed px-4 py-3 bg-white/70 backdrop-blur-sm rounded-xl shadow-sm border border-amber-100">
+        A celebratory event marking the completion of the Professional Skills module
       </p>
     </header>
 
-    <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6">Overview</h2>
-      <p class="text-slate-700 mb-6 leading-relaxed">
-        The Food Fiesta project explored culinary arts as a unique skill development opportunity. 
-        This project emphasized creativity, cultural appreciation, and the intersection of technical 
-        precision with artistic expression in cooking.
-      </p>
-      
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Key Learning Objectives</h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <li class="flex items-start">
-          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
-          <span class="text-slate-700">Developing culinary techniques and presentation skills</span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
-          <span class="text-slate-700">Exploring cultural diversity through food</span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
-          <span class="text-slate-700">Building creativity and artistic expression abilities</span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
-          <span class="text-slate-700">Enhancing precision and attention to detail</span>
-        </li>
-      </ul>
-      
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Activities Completed</h2>
-      <div class="space-y-4">
-        <div class="border-l-4 border-amber-500 pl-4 py-1">
-          <h3 class="font-semibold text-slate-900">Culinary Techniques Workshop</h3>
-          <p class="text-slate-600">Learned fundamental cooking methods and advanced presentation techniques.</p>
-        </div>
-        <div class="border-l-4 border-amber-500 pl-4 py-1">
-          <h3 class="font-semibold text-slate-900">Cultural Cuisine Exploration</h3>
-          <p class="text-slate-600">Studied traditional dishes from various cultures and their significance.</p>
-        </div>
-        <div class="border-l-4 border-amber-500 pl-4 py-1">
-          <h3 class="font-semibold text-slate-900">Creative Recipe Development</h3>
-          <p class="text-slate-600">Designed original dishes combining different culinary traditions.</p>
-        </div>
-        <div class="border-l-4 border-amber-500 pl-4 py-1">
-          <h3 class="font-semibold text-slate-900">Food Presentation Challenge</h3>
-          <p class="text-slate-600">Enhanced abilities to create visually appealing and Instagram-worthy dishes.</p>
-        </div>
-      </div>
-      
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Culinary Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <div class="border border-amber-200 rounded-xl p-6">
-          <h3 class="font-bold text-slate-900 text-lg mb-3">International Cuisines</h3>
-          <p class="text-slate-700 mb-3">Mastered techniques from Italian, Japanese, Mexican, and Mediterranean traditions.</p>
-          <div class="flex items-center text-sm text-amber-600">
-            <i class="fa-solid fa-globe mr-2"></i>
-            <span>Created 25+ authentic dishes</span>
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-amber-500 to-amber-700 rounded-2xl shadow-lg p-6 mb-8 max-w-6xl mx-auto scroll-fade">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-4">
+            <i class="fa-solid fa-utensils text-2xl text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-1">Food Fiesta Celebration</h2>
+            <p class="text-amber-100">Celebrating the successful completion of the Professional Skills Module</p>
           </div>
         </div>
-        <div class="border border-amber-200 rounded-xl p-6">
-          <h3 class="font-bold text-slate-900 text-lg mb-3">Pastry Arts</h3>
-          <p class="text-slate-700 mb-3">Developed skills in baking, decorating, and creating精致 desserts.</p>
-          <div class="flex items-center text-sm text-amber-600">
-            <i class="fa-solid fa-cake mr-2"></i>
-            <span>Mastered 15+ pastry techniques</span>
-          </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2">
+          <span class="text-white font-semibold">Module Completion</span>
         </div>
-      </div>
-      
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Reflections</h2>
-      <p class="text-slate-700 mb-6 leading-relaxed">
-        The Food Fiesta project was a delightful departure from traditional technical skills, 
-        showing how creativity and precision intersect in unexpected ways. Learning about 
-        different cultures through their cuisines was both educational and inspiring. The 
-        precision required in cooking - from timing to measurements - paralleled the attention 
-        to detail needed in software development. Creating visually appealing dishes also 
-        enhanced my design sensibilities, which translate well to user interface work.
-      </p>
-      
-      <div class="bg-amber-50 rounded-xl p-6 mt-8">
-        <h3 class="font-bold text-amber-800 text-lg mb-3">Key Takeaway</h3>
-        <p class="text-amber-700">
-          <i class="fa-solid fa-quote-left mr-2"></i>
-          Skills development doesn't have to be confined to professional domains. Exploring 
-          creative outlets like cooking enhances problem-solving abilities, attention to detail, 
-          and cultural awareness - all valuable in any career. The joy and satisfaction from 
-          creating something delicious and beautiful is a wonderful complement to technical work.
-          <i class="fa-solid fa-quote-right ml-2"></i>
-        </p>
       </div>
     </div>
 
-    <!-- Image Gallery Section -->
-    <div class="max-w-6xl mx-auto mt-8 scroll-fade">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Culinary Journey</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
-          <div class="relative h-48 overflow-hidden">
-            <img src="./images/week5 (1).jpeg" alt="Culinary Workshop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <h3 class="font-bold text-white text-lg">Culinary Workshop</h3>
-              <p class="text-indigo-200 text-sm">Hands-on learning session</p>
-            </div>
-          </div>
+    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-6xl mx-auto scroll-fade">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-gradient-to-br from-indigo-50 to-amber-50 p-5 rounded-xl border border-indigo-100">
+          <h3 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-chalkboard-user text-indigo-500 mr-2"></i>Instructor</h3>
+          <p class="text-slate-700">Ms. Gowrisha</p>
         </div>
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
-          <div class="relative h-48 overflow-hidden">
-            <img src="./images/week5 (2).jpeg" alt="Food Presentation" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <h3 class="font-bold text-white text-lg">Food Presentation</h3>
-              <p class="text-indigo-200 text-sm">Artistic plating techniques</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
-          <div class="relative h-48 overflow-hidden">
-            <img src="./images/week5 (3).jpeg" alt="Cultural Cuisine" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3">
-              <h3 class="font-bold text-white text-lg">Cultural Cuisine</h3>
-              <p class="text-indigo-200 text-sm">International flavors</p>
-            </div>
-          </div>
+        <div class="bg-gradient-to-br from-indigo-50 to-amber-50 p-5 rounded-xl border border-indigo-100">
+          <h3 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-calendar-days text-indigo-500 mr-2"></i>Date</h3>
+          <p class="text-slate-700">2025-04-02</p>
         </div>
       </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Session Overview</h2>
+      <p class="text-slate-700 mb-4 leading-relaxed">
+        A celebratory Food Fiesta marking the completion of the Professional Skills module. Students showcased their culinary skills while applying professional etiquette learned throughout the course.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Key Topics Covered</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div class="flex items-center p-3 bg-amber-50 rounded-lg">
+          <i class="fa-solid fa-globe text-amber-500 mr-2"></i>
+          <span class="text-slate-700">Cultural Food Presentations</span>
+        </div>
+        <div class="flex items-center p-3 bg-amber-50 rounded-lg">
+          <i class="fa-solid fa-calendar-check text-amber-500 mr-2"></i>
+          <span class="text-slate-700">Event Planning and Coordination</span>
+        </div>
+        <div class="flex items-center p-3 bg-amber-50 rounded-lg">
+          <i class="fa-solid fa-network-wired text-amber-500 mr-2"></i>
+          <span class="text-slate-700">Professional Networking</span>
+        </div>
+        <div class="flex items-center p-3 bg-amber-50 rounded-lg">
+          <i class="fa-solid fa-users text-amber-500 mr-2"></i>
+          <span class="text-slate-700">Team Collaboration</span>
+        </div>
+        <div class="flex items-center p-3 bg-amber-50 rounded-lg">
+          <i class="fa-solid fa-trophy text-amber-500 mr-2"></i>
+          <span class="text-slate-700">Celebration of Achievements</span>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Topic Summary</h2>
+      <p class="text-slate-700 mb-4 leading-relaxed">
+        Celebrating the successful completion of the PS Module through a collaborative food event that brings together learning and cultural appreciation.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">4. What Was Learned</h2>
+      <p class="text-slate-700 mb-4 leading-relaxed">
+        Applied professional skills in a social setting while appreciating diverse cultures and building lasting connections with peers.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">5. What I Plan to Implement in the Future</h2>
+      <p class="text-slate-700 mb-4 leading-relaxed">
+        Will continue to apply all professional skills learned throughout the module in future career endeavors and maintain the connections made.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Session Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="week12_1.jpg" alt="Food Fiesta Moment 1" class="gallery-img">
+          <div class="caption">Week 12 Moment 1</div>
+        </div>
+        <div class="gallery-item">
+          <img src="week12_2.jpg" alt="Food Fiesta Moment 2" class="gallery-img">
+          <div class="caption">Week 12 Moment 2</div>
+        </div>
+        <div class="gallery-item">
+          <img src="week12_3.jpg" alt="Food Fiesta Moment 3" class="gallery-img">
+          <div class="caption">Week 12 Moment 3</div>
+        </div>
+        <div class="gallery-item">
+          <img src="week12_4.jpg" alt="Food Fiesta Moment 4" class="gallery-img">
+          <div class="caption">Week 12 Moment 4</div>
+        </div>
+        <div class="gallery-item">
+          <img src="week12_5.jpg" alt="Food Fiesta Moment 5" class="gallery-img">
+          <div class="caption">Week 12 Moment 5</div>
+        </div>
+        <div class="gallery-item">
+          <img src="week12_6.jpg" alt="Food Fiesta Moment 6" class="gallery-img">
+          <div class="caption">Week 12 Moment 6</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="max-w-6xl mx-auto mt-8 flex justify-between">
+      <a href="week11.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
+        <i class="fas fa-arrow-left mr-2"></i> Previous Week
+      </a>
+      <a href="PS_index.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
+        Home <i class="fas fa-arrow-right ml-2"></i>
+      </a>
     </div>
   </main>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-4">
-        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+  <footer class="bg-slate-900 text-slate-400 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="./abi.JPG" alt="Abishanan" class="rounded-full w-10 h-10 object-cover border-2 border-indigo-600 shadow-md" />
         <div>
           <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
           <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
         </div>
       </div>
-      <div class="flex items-center gap-5 text-2xl">
-        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
-        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      <div class="flex items-center gap-4 text-lg">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400 transition"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </footer>
+  
+  <script>
+    // Enhanced scroll animations with more technical effects
+    function createScrollAnimations() {
+      // Animate main containers with staggered effects
+      const mainContainers = document.querySelectorAll('header, .bg-white, .mt-8, footer');
+      mainContainers.forEach((container, i) => {
+        const elements = container.querySelectorAll('.scroll-fade, .card-hover');
+        
+        // Container entrance animation
+        gsap.fromTo(container,
+          { opacity: 0, y: 100, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: container,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+        
+        // Staggered element animations within containers
+        if (elements.length) {
+          gsap.fromTo(elements,
+            { opacity: 0, y: 30, rotationX: -15 },
+            {
+              opacity: 1,
+              y: 0,
+              rotationX: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: "back.out(1.7)",
+              scrollTrigger: {
+                trigger: container,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          );
+        }
+      });
+      
+      // Gallery items animation
+      gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+        gsap.fromTo(item,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: i * 0.1,
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+    }
+    
+    // Initialize animations when page loads
+    window.addEventListener('load', () => {
+      try {
+        // Ensure scroll-fade elements are visible on load
+        const scrollFadeElements = document.querySelectorAll('.scroll-fade');
+        scrollFadeElements.forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        });
+        
+        setTimeout(createScrollAnimations, 300);
+      } catch (error) {
+        console.error('Animation initialization error:', error);
+        // Fallback: ensure all elements are visible
+        document.querySelectorAll('*').forEach(el => {
+          el.style.visibility = 'visible';
+          el.style.opacity = '1';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
